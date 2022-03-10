@@ -1,3 +1,44 @@
 body {
-  font-family: sans-serif, arial;
+  /* font-family: sans-serif, arial; */
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1 {
+  border-bottom: solid rgb(128, 128, 128);
+  margin-left: 20px;
+  /* padding-left: 30px; */
+  color: rgb(90, 0, 0);
+}
+
+.movieBox {
+  border: solid green;
+  margin: 20px 50px;
+  /* margin-top: 200px; */
+}
+
+h3 {
+  /* border-bottom: solid green; */
+  padding: 10px;
+  font-weight: normal;
+  color: blue;
+}
+
+#app {
+  border: solid grey;
+  background-color: rgb(252, 245, 199);
+}
+
+.searchForm{
+  margin: 10px 0 10px 50px;
+  height: 30px;
+}
+
+.searchForm #searchBox{
+  height: 80%;
+  width: 300px;
+}
+/* why are the height percentage different */
+.searchForm #searchBotton{
+  height: 100%;
+  width: 50px;
 }
