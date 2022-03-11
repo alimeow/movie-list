@@ -12,14 +12,15 @@ h1 {
 
 .movieBox {
   border: solid green;
-  margin: 20px 50px;
+  margin: 10px 50px;
   /* margin-top: 200px; */
 }
 
-h3 {
+.movieTitle {
   /* border-bottom: solid green; */
+  /* font-size */
   padding: 10px;
-  font-weight: normal;
+  font-weight: bold;
   color: blue;
 }
 
@@ -42,3 +43,15 @@ h3 {
   height: 100%;
   width: 50px;
 }
+
+#userMovie {
+  margin-left: 50px;
+}
+
+#addBotton {
+  margin-left: 5px;
+  background-color: lightseagreen;
+  color: white;
+  border-radius: 5px;
+}
+
