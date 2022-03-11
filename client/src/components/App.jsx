@@ -1,6 +1,6 @@
 import React from 'react';
 import Search from './Search.jsx';
-import movies from '../data/movieData.js';
+// import movies from '../data/movieData.js';
 import MovieList from './MovieList.jsx';
 import UserMovies from './UserMovies.jsx';
 
@@ -9,10 +9,11 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      allMovies: movies
+      // allMovies: movies
+      allMovies: []
     }
 
-    this.moviesAdded = [];
+    // this.moviesAdded = [];
 
     this.filterMovies = this.filterMovies.bind(this); //???
     this.showAddedMovies = this.showAddedMovies.bind(this);
@@ -29,8 +30,8 @@ class App extends React.Component {
     // let moviesAdded = [];
     let newMovie = {};
     newMovie['title'] = val;
-    this.moviesAdded.push(newMovie);
-    this.setState( {allMovies: this.moviesAdded} )
+    this.state.allMovies.push(newMovie);
+    this.setState( {allMovies: this.state.allMovies} )
   }
 
   render() {
