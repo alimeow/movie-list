@@ -19,6 +19,7 @@ class MovieListEntry extends React.Component {
     this.state = {
       // bClicked: false,
       watchedState: false  //if we add state here it won't change that in movies
+
     }
 
     this.handleClick = this.handleClick.bind(this)
@@ -36,20 +37,20 @@ class MovieListEntry extends React.Component {
     console.log(this.props.movie.watched)
     //say if change clicked state, maybe change the watched property of every movie
     //use two seperate setState calls here or two para in one setstate?
-    this.setState({
-      watchedState: !this.state.watchedState
-    })
+    // this.setState({
+    //   watchedState: !this.state.watchedState
+    // })
     // console.log(this.state.watchedState + '\n---------------')
     // this.props.alterWatch(this.state.watchedState)
     //since props were passing down from layers indirectly, we can alter watched state directly
-    this.props.alterWatch(this.state.watchedState) //link to App
+    this.props.alterWatch(this.props.movie) //link to App
   }
 
 
   render() {
 
     var bStyle = {
-      backgroundColor: this.state.watchedState ? 'green' : 'grey'
+      backgroundColor: this.props.movie.watched ? 'green' : 'grey' //
     }
 
     return (

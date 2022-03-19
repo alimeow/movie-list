@@ -61,10 +61,10 @@ class WatchedMovies extends React.Component {
       <div className='watchedMovies'>
         <button
         style={watchedStyle}
-        onClick={this.handleClickOnWatched}
+        onClick={() => this.props.toggleState(true)}
         >Watched</button>
         <button
-        onClick={this.handleClickOnToWatch}
+        onClick={() => this.props.toggleState(false)}
         style={toWatchStyle}
         >To Watch</button>
       </div>
