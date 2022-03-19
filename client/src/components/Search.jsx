@@ -63,4 +63,5 @@ export default Search;
 //once you enter something and the result becomes empty, when you
 //search correctly again it won't show anything.
 //might need some change on the handleChange function?
-
+//another problem:
+//if perform search function then add new movies it will just add on to the filtered list.

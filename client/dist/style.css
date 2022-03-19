@@ -55,3 +55,13 @@ h1 {
   border-radius: 5px;
 }
 
+.watchButton {
+  float: right;
+  background-color: green;
+  color: white;
+}
+
+.watchedMovies {
+  margin-left: 50px;
+  /* font-weight: bold; */
+}

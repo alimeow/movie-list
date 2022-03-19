@@ -19,20 +19,22 @@ class UserMovies extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     // this.props.moviesAdded.push(this.state.movieAdded)
-    this.props.a(this.state.movieAdded)
+    this.props.inputMovie(this.state.movieAdded)
   }
+
+  //toggle watched state of every movie
+
 
   render() {
     return (
       <div id='userMovie'>
         <form onSubmit={this.handleSubmit}>
           {/* what is value=this.state.value */}
-          <input placeholder='Add movie title here' type='text' value={this.state.value} onChange={this.handleChange}>
+          <input placeholder='Add movie title here' type='text' value={this.state.movieAdded} onChange={this.handleChange}>
           </input>
           <input id='addBotton' type='submit' value='Add'></input>
         </form>
       </div>
-
     )
   }
 }

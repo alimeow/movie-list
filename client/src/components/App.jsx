@@ -3,6 +3,7 @@ import Search from './Search.jsx';
 // import movies from '../data/movieData.js';
 import MovieList from './MovieList.jsx';
 import UserMovies from './UserMovies.jsx';
+import WatchedMovies from './WatchedMovies.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,13 +11,39 @@ class App extends React.Component {
 
     this.state = {
       // allMovies: movies
-      allMovies: []
+      allMovies: [],
+      watchedMovies: [],
+      unwatchedMovies: []
+      // movieWatched: false
     }
 
-    // this.moviesAdded = [];
-
+    this.alterWatched = this.alterWatched.bind(this);
     this.filterMovies = this.filterMovies.bind(this); //???
     this.showAddedMovies = this.showAddedMovies.bind(this);
+    this.filterWatched = this.filterWatched.bind(this);
+    this.filterUnwatched = this.filterUnwatched.bind(this);
+  }
+
+  filterWatched(val) {
+    let watchedMovies = this.state.allMovies.filter((movie, index) => (movie.watched === true))
+    this.setState( {allMovies: watchedMovies} )
+  }
+
+  filterUnwatched(val) {
+    let unwatchedMovies = this.state.allMovies.filter((movie, index) => (movie.watched === false))
+    //do i even need this conditional?
+    // if (val) {
+      this.setState( {allMovies: unwatchedMovies} )
+    // }
+  }
+  //click watched key in each movie then alter watchedState
+  alterWatched(movieObj) {
+    // this.setState({this.state.movieWatched}) = val;
+    for (var i = 0; i < this.state.allMovies.length; i++) {
+      if (movieObj.title === this.state.allMovies.title) {
+
+      }
+    }
   }
 
   filterMovies(value) {
@@ -30,6 +57,7 @@ class App extends React.Component {
     // let moviesAdded = [];
     let newMovie = {};
     newMovie['title'] = val;
+    newMovie['watched'] = false;
     this.state.allMovies.push(newMovie);
     this.setState( {allMovies: this.state.allMovies} )
   }
@@ -38,10 +66,11 @@ class App extends React.Component {
     return (
       <div>
         <h1>Movie List</h1>
-        <UserMovies a={this.showAddedMovies}/>
+        <UserMovies inputMovie={this.showAddedMovies}/>
         <Search searchMovies={this.filterMovies}/>
+        <WatchedMovies pickWatched={this.filterWatched} pickUnwatched={this.filterUnwatched}/>
         {/* //movies is a key to Movielist props to take in, this.state.allMovies is the data past in */}
-        <MovieList movies={this.state.allMovies}/>
+        <MovieList movies={this.state.allMovies} alterWatch={this.alterWatched}/>
       </div>
     )
   }

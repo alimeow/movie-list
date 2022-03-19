@@ -6,7 +6,8 @@ var MovieList = (props) => {
     <div className='movieBox'>
       {
         props.movies.map((movie, index) => (
-          <MovieListEntry key={index} movie={movie}/>
+
+          <MovieListEntry key={index} movie={movie} alterWatch={props.alterWatch}/>
         ))
       }
     </div>
