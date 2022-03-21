@@ -18,12 +18,10 @@ class UserMovies extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    // this.props.moviesAdded.push(this.state.movieAdded)
     this.props.inputMovie(this.state.movieAdded)
   }
 
   //toggle watched state of every movie
-
 
   render() {
     return (

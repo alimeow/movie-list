@@ -15,29 +15,19 @@ class WatchedMovies extends React.Component {
   }
 
   handleClickOnWatched() {
-    // alert('you clicked watched')
-    // this.props.pickWatched(this.state.watchedClicked);
-    // this.setState({watchedClicked: !this.state.watchedClicked})
-    // this.setState({toWatchedClicked: !this.state.toWatchedClicked})
-    if (!this.state.buttonClicked) {
+
+    if (!this.state.buttonClicked) {    //forgot why I added conditional
       this.setState({buttonClicked: !this.state.buttonClicked})
+      this.props.toggleState(true)
     }
-    this.props.pickWatched(this.state.buttonClicked)
   }
 
   handleClickOnToWatch() {
-    // this.state.toWatchedClicked = !this.state.toWatchedClicked
-    // why is this needed in the second case not first case
-    // this.setState({toWatchedClicked: !this.state.toWatchedClicked})
-    // this.props.pickUnwatched(this.state.toWatchedClicked);
 
-    // this.setState({toWatchedClicked: !this.state.toWatchedClicked})
-    // this.setState({watchedClicked: !this.state.watchedClicked})
-    // this.props.pickUnwatched(this.state.toWatchedClicked)
     if (this.state.buttonClicked) {
       this.setState({buttonClicked: !this.state.buttonClicked})
+      this.props.toggleState(false)
     }
-    this.props.pickUnwatched(this.state.buttonClicked)
   }
 
 
@@ -52,19 +42,16 @@ class WatchedMovies extends React.Component {
       backgroundColor: this.state.buttonClicked ? 'green' : 'white'
     };
 
-    // let buttonStyle = {
-    //   // backgroundColor: this.state.toWatchedClicked ? 'green' : 'white'
-    //   backgroundColor: this.state.buttonClicked ? 'white' : 'green'
-    // };
-
     return (
       <div className='watchedMovies'>
         <button
         style={watchedStyle}
-        onClick={() => this.props.toggleState(true)}
+        // onClick={() => this.props.toggleState(true)}
+        onClick={this.handleClickOnWatched}
         >Watched</button>
         <button
-        onClick={() => this.props.toggleState(false)}
+        // onClick={() => this.props.toggleState(false)}
+        onClick={this.handleClickOnToWatch}
         style={toWatchStyle}
         >To Watch</button>
       </div>

@@ -47,7 +47,6 @@ class Search extends React.Component {
 export default Search;
 
 
-
 // var Search = (props) => (
 //   // props.giveItAName <- this name has to be the same in App when we instantiate
 //   <form className='searchForm' onSubmit={props.handleInputSubmit} onChange={props.handleInputChange}>
