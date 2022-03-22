@@ -6,7 +6,7 @@ var MovieList = (props) => {
     <div className='movieBox'>
       {
         props.movies.map((movie, index) => {
-          if (movie.watched === props.movieState) {  //?**
+          if (movie.watched === props.movieState) {  //cool
             return <MovieListEntry key={index} movie={movie} alterWatch={props.alterWatch}/>
           }
         })
