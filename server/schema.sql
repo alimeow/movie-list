@@ -13,4 +13,4 @@ CREATE TABLE `Movies` (
 -- input default movie data below - optional:
 -- Is the below dummy data the solution to 'seed data into database'?
 -- should I add watched property here or it's just a control property in react front end only...
-INSERT INTO Movies (title, watched) VALUES ('The Big Short', 0);
+INSERT INTO Movies (title, watched) VALUES ('Sunshine', 0);
